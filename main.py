@@ -59,13 +59,13 @@ def get_parse():
                         help='The method of LKR extraction.')
     parser.add_argument('--diverse_method', type=str, default='kmeans',
                         help='The method of LKR diverse process in LKR extraction.')
-    parser.add_argument('--use_keywords', type=bool, default=True,
+    parser.add_argument('--use_keywords', type=lambda x: (str(x).lower() == 'true'), default=True,
                         help='Using keywords for article retrieval.')
     parser.add_argument('--max_charge_length', type=int, default=5,
                         help='The max length of charge.')
     parser.add_argument('--max_output_length', type=int, default=11,
                         help='The max length of output tokens.')
-    parser.add_argument('--baseline', type=bool, default=False,
+    parser.add_argument('--baseline', type=lambda x: (str(x).lower() == 'true'), default=False,
                         help='The model file path.')
     parser.add_argument('--epochs', type=int, default=1,
                         help='The epochs.')
